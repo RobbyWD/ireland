@@ -17,6 +17,7 @@ import com.ireland.travel.service.CustomerService;
 import javax.validation.Valid;
 
 @Controller
+@RequestMapping("/user")
 public class UserController {
 	
 	
@@ -30,7 +31,7 @@ public class UserController {
 		return "user/register";
 	}
 	
-	@RequestMapping(value = "/users", method = RequestMethod.POST)
+	@RequestMapping(value = "/user", method = RequestMethod.POST)
 	public String saveUser(@ModelAttribute("user") @Valid Customer customer, BindingResult result) {
 		
 		if (result.hasErrors()) {
