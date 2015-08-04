@@ -4,24 +4,22 @@
 <html>
 
   <head>
-    <link href="assets/css/shift.css" rel="stylesheet">
-    
-    <link rel="stylesheet" href="assets/css/bootstrap.css">
-    <link rel="stylesheet" href="assets/css/main.css">
-    
+    <link href="resources/css/shift.css" rel="stylesheet">   
+    <link rel="stylesheet" href="resources/css/bootstrap.css">
+    <link rel="stylesheet" href="resources/css/main.css">
   </head>
 
   <body>
     <div class="nav">
       <div class="container">
         <ul class="pull-left">
-          <li><a href="home.html">Home</a></li>
+          <li><a href="">Home</a></li>
           <li><a href="#">Browse</a></li>
         </ul>
         <ul class="pull-right">
-          <li><a href="register.html">Sign Up</a></li>
+          <li><a href="register">Sign Up</a></li>
           <li><a href="#">Log In</a></li>
-          <li><a href="cam.html">Webcams</a></li>
+          <li><a href="cam">Webcams</a></li>
         </ul>
       </div>
     </div>
@@ -45,28 +43,28 @@
             <div class="col-md-4">
             
                 <div class="thumbnail">
-                <img src="assets/img/pic_1.jpg">
+                <img src="resources/img/pic_1.jpg">
                 </div>
                 
                 <div class="thumbnail">
-                <img src="assets/img/pic_2.jpg">
+                <img src="resources/img/pic_2.jpg">
                 </div>
             </div>
             
             <div class="col-md-4">
                 <div class="thumbnail">
-                <img src="assets/img/pic_3.jpg">
+                <img src="resources/img/pic_3.jpg">
                 </div>
                 
                 <div class="thumbnail">
-                <img src="assets/img/pic_4.jpg">
+                <img src="resources/img/pic_4.jpg">
                 </div>
             
             </div>
             
             <div class="col-md-4">
                 <div class="thumbnail">
-                <img src="assets/img/pic_7.jpg">
+                <img src="resources/img/pic_7.jpg">
                 </div>
             </div>
         </div>
@@ -80,7 +78,7 @@
 	      <div class="col-md-4">
 			<h3>Housing</h3>
 			<p>From apartments and rooms to treehouses and boats: stay in unique spaces of Ireland.</p>
-			<p><a href="rent.html">See how easy is to rent with Failte Ireland</a></p>
+			<p><a href="rent">See how easy is to rent with Failte Ireland</a></p>
 	      </div>
 	      
 		  <div class="col-md-4">
@@ -92,7 +90,7 @@
 		  <div class="col-md-4">
 			<h3>Trust and Safety</h3>
 			<p>From Verified ID to our worldwide customer support team, we've got your back.</p>
-			<p><a href="trust.html">Learn about trust</a></p>
+			<p><a href="trust">Learn about trust</a></p>
 		  </div>
 	    </div>
 	  </div>

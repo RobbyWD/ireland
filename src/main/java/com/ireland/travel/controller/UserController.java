@@ -12,17 +12,21 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.ireland.travel.model.Customer;
+import com.ireland.travel.repository.CustomerRepository;
 import com.ireland.travel.service.CustomerService;
 
 import javax.validation.Valid;
 
 @Controller
-@RequestMapping("/user")
+//@RequestMapping("/user")
 public class UserController {
 	
 	
 	@Autowired
 	CustomerService customerService;
+	
+	@Autowired
+	CustomerRepository repository;
 	
 	
 	@RequestMapping("register")
@@ -37,11 +41,12 @@ public class UserController {
 		if (result.hasErrors()) {
 			return "user/register";
 		}
-		customerService.saveCustomer(customer);
-		
-		return "user/saveSuccess";	
-		
-//		return "redirect:/users/" + customer.getName();
+		else{
+			customerService.saveCustomer(customer);
+//			repository.save(customer);
+			return "redirect:/users/" + customer.getName();
+		}
+				
 	}
 	
 	@RequestMapping (value="/users/{userId}")
