@@ -27,25 +27,19 @@
       </div>
     </div>
     <div class="container">
-    	<img src="resources/img/bus.jpg" width="100%"></img>
+    	<img src="resources/img/tour.jpg" width="100%"></img>
     </div>
     
     <div class="neighborhood-guides">
     <div class="container">
-        <h2>84 Years of Travel Excellence - We know Ireland better than anyone</h2>
-        <p>Dear Fellow Traveller:
+        <h2>84 Years of Travel Excellence - We know Ireland better than anyone!</h2>
+        <p>To find your ideal holiday, browse our comprehensive selection of guided coach tours to Ireland that vary in length from 5 - 24 days. Choose value-for-money first class programs, splurge with deluxe properties or find something in between.
 
-For the 2015 season we will celebrate 84 years of travel excellence! During this time CIE Tours International has provided travellers with the highest quality holidays to Ireland and Britain and we continue to improve our tours and our services.
+All of our quality escorted coach tours to Ireland feature prepaid daily sightseeing, excellent hotels, full breakfasts, most dinners, including specialty dinners with entertainment and, most importantly, no hidden extras! Our tour guides do not sell any optional tours so that they can focus 100% on your holiday enjoyment!
 
-Over the years we have built up an enviable reputation for security and reliability with satisfied clients throughout the world. We set our own high standards for delivering excellent holidays with state-of-the-art luxury coaches; prompt and pleasant customer service; the best hotels; and carefully chosen visits and entertainment. Our 2015 Ireland tours, Scotland tours for 2015 as well as our UK tours for 2015 are available for booking. We are still offering some great booking discounts for 2015.
+Also consider one of our popular holidays combining Ireland with Scotland, England and Wales. If you need help in deciding which tour is right for you just call one of our friendly CIE Tours travel advisors at +353-1-703-1888 or contact us online.
 
-We have also a wide selection of 2016 Ireland tours now available for booking.
-
-Our coach tours are fully inclusive with no optional extras to purchase at your destination. You pay one price and we insist that our tour directors focus solely on your enjoyment. Once you pay the deposit, we guarantee our land tour prices.
-
-Brian Stack, Managing Director, C.I.E. Tours International If you prefer to travel independently, we offer self-drive and chauffeur-drive programs for Ireland with a wide range of hotel accommodation, which can be booked in advance, as well as popular B & Bs.
-
-Whichever way you like to travel, choose one of our fine holidays from our website and enjoy the greatest travel experience ever!</p> 
+Please browse our wide selection of Ireland tours from 5 to 9 days in length below.</p> 
             </div>
         </div>
  

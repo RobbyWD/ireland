@@ -40,4 +40,10 @@ public class IndexController {
 	    System.out.println(request.getServletPath());
 	    return "cam";
 	}
+	
+	@RequestMapping("tour")
+	public String tour(HttpServletRequest request) {
+	    System.out.println(request.getServletPath());
+	    return "tour";
+	}
 }

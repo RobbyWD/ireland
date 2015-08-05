@@ -14,7 +14,7 @@
       <div class="container">
         <ul class="pull-left">
           <li><a href="">Home</a></li>
-          <li><a href="#">Browse</a></li>
+          <li><a href="products?create">Management</a></li>
         </ul>
         <ul class="pull-right">
           <li><a href="register">Sign Up</a></li>
@@ -35,7 +35,7 @@
     
     <div class="neighborhood-guides">
     <div class="container">
-        <h2>83 Years of Travel Excellence - We know Ireland better than anyone</h2>
+        <h2>84 Years of Travel Excellence - We know Ireland better than anyone</h2>
         <p>All of our quality escorted coach tours to Ireland feature prepaid daily sightseeing, excellent hotels,
          full breakfasts, most dinners, including specialty dinners with entertainment and, most importantly, no hidden extras!
          Our tour guides do not sell any optional tours so that they can focus 100% on your holiday enjoyment!</p>
@@ -84,7 +84,7 @@
 		  <div class="col-md-4">
 			<h3>Tours</h3>
 			<p>To find your ideal holiday, browse our comprehensive selection of guided coach tours to Ireland that vary in length from 5 - 15 days.</p>
-			<p><a href="#">Learn more about tours</a></p>
+			<p><a href="tour">Learn more about tours</a></p>
 		  </div>
 		  
 		  <div class="col-md-4">
