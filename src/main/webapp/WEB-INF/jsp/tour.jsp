@@ -44,14 +44,30 @@ Please browse our wide selection of Ireland tours from 5 to 9 days in length bel
      </div>
     </div>
     
-    <div class="container">
-		<h3>Products</h3>
-		
-		<c:forEach var="item" items="${category.products}">
-			<c:out value="${item.name}"/> <br/>
-		</c:forEach>
+<div class="container">
+	
+	<table>
+		<tr>
+			<th>Duration </th> <th>Tour name</th> <th> Description </th> <th> Price </th> <th>Order</th> 
+		 </tr>
+		 <c:forEach var="item" items="${featuredProducts}">
+		 	<tr>
+		 		<td>${item.duration}</td> <td>${item.name}</td> <td>${item.description}</td> <td>${item.price}</td> <td><a href="cart/add/${item.id}">Add to cart</a></td>
+		 	</tr>
+		 </c:forEach>
+	</table>
+	
+	
+<%-- 	<c:forEach var="item" items="${featuredProducts}"> --%>
+<%-- 		<c:out value="${item.name}"/> &nbsp; <a href="cart/add/${item.id}">Add to cart</a> <br/> --%>
+<%-- 	</c:forEach> --%>
 
-	</div>
+
+<%-- 	<c:forEach var="category" items="${allCategories}"> --%>
+<%-- 		<a href="categories/${category.id}"><c:out value="${category.name}"/></a> <br/> --%>
+<%-- 	</c:forEach>	 --%>
+		
+</div>
     
  
 
