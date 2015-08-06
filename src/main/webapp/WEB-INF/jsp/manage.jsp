@@ -1,12 +1,10 @@
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page session="true" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ page session="false" %>
+<!DOCTYPE html>
 <html>
 
   <head>
     <link href="resources/css/shift.css" rel="stylesheet">
-    <jsp:include page="/WEB-INF/jsp/head-include.jsp" />
     <link rel="stylesheet" href="resources/css/bootstrap.css">
     <link rel="stylesheet" href="resources/css/main.css">
     
@@ -17,7 +15,7 @@
      <div class="nav">
       <div class="container">
         <ul class="pull-left">
-          <li><a href="">Home</a></li>
+         <li><a href="">Home</a></li>
           <li><a href="#">Browse</a></li>
         </ul>
         <ul class="pull-right">
@@ -28,31 +26,25 @@
       </div>
     </div>
     <div class="container">
-    	<img src="resources/img/tour.jpg" width="100%"></img>
+    	<img src="resources/img/admin.jpg" width="100%"></img>
     </div>
     
     <div class="neighborhood-guides">
     <div class="container">
-        <h2>84 Years of Travel Excellence - We know Ireland better than anyone!</h2>
-        <p>To find your ideal holiday, browse our comprehensive selection of guided coach tours to Ireland that vary in length from 5 - 24 days. Choose value-for-money first class programs, splurge with deluxe properties or find something in between.
-
-All of our quality escorted coach tours to Ireland feature prepaid daily sightseeing, excellent hotels, full breakfasts, most dinners, including specialty dinners with entertainment and, most importantly, no hidden extras! Our tour guides do not sell any optional tours so that they can focus 100% on your holiday enjoyment!
-
-Also consider one of our popular holidays combining Ireland with Scotland, England and Wales. If you need help in deciding which tour is right for you just call one of our friendly CIE Tours travel advisors at +353-1-703-1888 or contact us online.
-
-Please browse our wide selection of Ireland tours from 5 to 9 days in length below.</p> 
-     </div>
+        <h4>Add products and categories, as much as you like :)</h4>
+      <div class="nav">
+      	<div class="container">
+        	<ul class="pull-left">
+        		<li><a href="products?create">Product Management</a></li>
+        	</ul>
+        	 <ul class="pull-right">
+        	    <li><a href="categories?create">Category Management</a></li>
+        	  </ul>
+      	</div>
     </div>
-    
-    <div class="container">
-		<h3>Products</h3>
-		
-		<c:forEach var="item" items="${category.products}">
-			<c:out value="${item.name}"/> <br/>
-		</c:forEach>
 
-	</div>
-    
+   </div>
+ </div>
  
 
     <div class="learn-more">

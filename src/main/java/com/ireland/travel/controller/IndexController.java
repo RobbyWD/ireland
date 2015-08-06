@@ -46,4 +46,10 @@ public class IndexController {
 	    System.out.println(request.getServletPath());
 	    return "tour";
 	}
+	
+	@RequestMapping("manage")
+	public String manage(HttpServletRequest request) {
+	    System.out.println(request.getServletPath());
+	    return "manage";
+	}
 }

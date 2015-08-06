@@ -33,7 +33,7 @@
 	Register
 </h3>
 </div>
-  <div class="neighborhood-guides">
+  <div class="container">
 	<form class="container" name="input" method="post" action="user">
 	Login: <input type="text" name="name" /><br/>
 	Password: <input type="text" name="password" /><br/>

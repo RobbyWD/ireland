@@ -26,7 +26,7 @@
       </div>
     </div>
 
-	<div class="neighborhood-guides">
+	<div class="container">
 	<h2>Edit Product</h2>
 	<div class="form-group form">
 	<form:form name="input" method="post" modelAttribute="product"

@@ -14,7 +14,7 @@
       <div class="container">
         <ul class="pull-left">
           <li><a href="">Home</a></li>
-          <li><a href="products?create">Management</a></li>
+          <li><a href="manage">Management</a></li>
         </ul>
         <ul class="pull-right">
           <li><a href="register">Sign Up</a></li>

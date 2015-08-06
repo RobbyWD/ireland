@@ -26,7 +26,7 @@
       </div>
     </div>
 
-	<div class="neighborhood-guides">
+	<div class="container">
 	<h2>View Product</h2>
 	<div><strong> Name: </strong></div>
 	<div> ${product.name} </div>
