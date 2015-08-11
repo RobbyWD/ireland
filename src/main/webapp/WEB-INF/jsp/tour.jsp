@@ -22,11 +22,12 @@
         </ul>
         <ul class="pull-right">
           <li><a href="register">Sign Up</a></li>
-          <li><a href="#">Log In</a></li>
+          <li><a href="login">Log In</a></li>
           <li><a href="cam">Webcams</a></li>
         </ul>
       </div>
     </div>
+    
     <div class="container">
     	<img src="resources/img/tour.jpg" width="100%"></img>
     </div>
