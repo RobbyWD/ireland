@@ -8,31 +8,11 @@
     <link href="resources/css/shift.css" rel="stylesheet">   
     <link rel="stylesheet" href="resources/css/bootstrap.css">
     <link rel="stylesheet" href="resources/css/main.css">
+    <jsp:include page="/WEB-INF/jsp/menu.jsp" />
   </head>
 
   <body>
   
-    <div class="nav">
-      <div class="container">
-        <ul class="pull-left">
-          <li><a href="">Home</a></li>
-          <li><a href="manage">Management</a></li>
-        </ul>
-        <ul class="pull-right">
-	        <c:choose>
-				<c:when test="${empty loggedInUser.name}">
-					<li><a href="login">Log In</a></li>
-				</c:when>
-				<c:otherwise>
-					Hello ${loggedInUser.firstName}! &nbsp;
-					<li><a href="logout">Log Out</a></li>
-				</c:otherwise>
-			</c:choose>
-          <li><a href="register">Sign Up</a></li>
-          <li><a href="cam">Webcams</a></li>
-        </ul>
-      </div>
-    </div>
 
     <div class="jumbotron">
       <div class="container">

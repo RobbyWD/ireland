@@ -2,33 +2,26 @@
 	pageEncoding="US-ASCII"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<!-- <!DOCTYPE html> -->
 <html>
 <head>
-    <link href="resources/css/shift.css" rel="stylesheet">   
+	<link rel="stylesheet" href="resources/css/shift.css">
     <link rel="stylesheet" href="resources/css/bootstrap.css">
     <link rel="stylesheet" href="resources/css/main.css">
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>View Profile</title>
 	<jsp:include page="/WEB-INF/jsp/head-include.jsp" />
-	<jsp:include page="/WEB-INF/jsp/menu.jsp" />
-	<title>Register</title>
+	 <jsp:include page="/WEB-INF/jsp/menu.jsp" />
 </head>
 <body>
-	
-
-	<div class="container">
-    	<img src="resources/img/register.jpg" width="100%"></img>
-   
-	</div>
-
 <div class="neighborhood-guides">
 	    <div class="container">
-	    <h2>Register</h2>
+	    <h2>Edit Profile:</h2>
 	    </div>
  </div>
-  <div class="container">
-	<form:form class="form-group form" name="input" method="post" action="users" modelAttribute="user">
-	<form:errors path="name" />
+
+	<div class="container">
+	<form:form class="form-group form" name="input" method="post" modelAttribute="user"
+		action="users/${user.name}">
+		<form:input type="hidden" path="id" />
 	Login: <input type="text" name="name" /><br/>
 	Password: <input type="text" name="password" /><br/>
 	Email: <input type="text" name="email" /><br/>
@@ -39,6 +32,5 @@
 	<input type="submit" value="Submit">
 	</form:form>
 	</div>
-
 </body>
 </html>

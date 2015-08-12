@@ -2,7 +2,7 @@ package com.ireland.travel.service;
 
 import com.google.common.base.Preconditions;
 import com.google.common.collect.Lists;
-import com.ireland.travel.model.Product;
+import com.ireland.travel.domain.Product;
 import com.ireland.travel.repository.CategoryRepository;
 import com.ireland.travel.repository.ProductRepository;
 

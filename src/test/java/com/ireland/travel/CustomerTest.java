@@ -14,7 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.ireland.travel.model.Customer;
+import com.ireland.travel.domain.Customer;
 import com.ireland.travel.repository.CustomerRepository;
 import com.ireland.travel.service.CustomerService;
 

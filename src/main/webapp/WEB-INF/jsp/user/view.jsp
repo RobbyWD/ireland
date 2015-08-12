@@ -8,23 +8,15 @@
     <link rel="stylesheet" href="resources/css/main.css">
 	<title>View Profile</title>
 	<jsp:include page="/WEB-INF/jsp/head-include.jsp" />
+	<jsp:include page="/WEB-INF/jsp/menu.jsp" />
 </head>
 <body>
-<div class="nav">
-      <div class="container">
-        <ul class="pull-left">
-          <li><a href="">Home</a></li>
-          <li><a href="#">Browse</a></li>
-        </ul>
-        <ul class="pull-right">
-          <li><a href="user/register">Sign Up</a></li>
-          <li><a href="#">Log In</a></li>
-          <li><a href="cam">Webcams</a></li>
-        </ul>
-      </div>
-    </div>
 
-<h3>View Profile</h3>
+<div class="neighborhood-guides">
+	    <div class="container">
+	    <h2>View Profile</h2>
+	    </div>
+ </div>
 
 <div class="thumbnail">
  	<img src="resources/img/user.jpg"></img>
@@ -34,6 +26,8 @@
 	<div> Name: ${user.firstName} ${user.lastName} </div>
 	<div> Email: ${user.email}</div>
 </div>
+
+<a href="users/${user.name}/edit">Edit Profile</a>
 
 </body>
 </html>

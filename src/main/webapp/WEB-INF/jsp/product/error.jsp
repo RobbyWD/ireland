@@ -8,11 +8,18 @@
     <link rel="stylesheet" href="resources/css/bootstrap.css">
     <link rel="stylesheet" href="resources/css/main.css">
 	<jsp:include page="/WEB-INF/jsp/head-include.jsp" />
+	<jsp:include page="/WEB-INF/jsp/menu.jsp" />
 </head>
 <body>
+
+<div class="neighborhood-guides">
+	    <div class="container">
+	    <h2>Page not found</h2>>
+	    </div>
+ </div>
+
 	<div class="container">
-		<h2>Page not found</h2>
-	
+		
 		<p>Sorry, nothing here! There has been a server error or you are trying to view a page that is not available. </p>
 		<p>Why not go back to the <a href = "">home page</a> ? </p>
 	</div>

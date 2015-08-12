@@ -1,7 +1,7 @@
 package com.ireland.travel.service;
 
 import com.google.common.collect.Lists;
-import com.ireland.travel.model.Customer;
+import com.ireland.travel.domain.Customer;
 import com.ireland.travel.repository.CustomerRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;

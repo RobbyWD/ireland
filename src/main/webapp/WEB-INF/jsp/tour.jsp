@@ -7,6 +7,7 @@
   <head>
     <link href="resources/css/shift.css" rel="stylesheet">
     <jsp:include page="/WEB-INF/jsp/head-include.jsp" />
+    <jsp:include page="/WEB-INF/jsp/menu.jsp" />
     <link rel="stylesheet" href="resources/css/bootstrap.css">
     <link rel="stylesheet" href="resources/css/main.css">
     
@@ -14,19 +15,6 @@
 
   <body>
     
-     <div class="nav">
-      <div class="container">
-        <ul class="pull-left">
-          <li><a href="">Home</a></li>
-          <li><a href="#">Browse</a></li>
-        </ul>
-        <ul class="pull-right">
-          <li><a href="register">Sign Up</a></li>
-          <li><a href="login">Log In</a></li>
-          <li><a href="cam">Webcams</a></li>
-        </ul>
-      </div>
-    </div>
     
     <div class="container">
     	<img src="resources/img/tour.jpg" width="100%"></img>
@@ -47,7 +35,7 @@ Please browse our wide selection of Ireland tours from 5 to 9 days in length bel
     
 <div class="container">
 	
-	<table>
+	<table class="table">
 		<tr>
 			<th>Duration </th> <th>Tour name</th> <th> Description </th> <th> Price </th> <th>Order</th> 
 		 </tr>
@@ -58,19 +46,9 @@ Please browse our wide selection of Ireland tours from 5 to 9 days in length bel
 		 </c:forEach>
 	</table>
 	
-	
-<%-- 	<c:forEach var="item" items="${featuredProducts}"> --%>
-<%-- 		<c:out value="${item.name}"/> &nbsp; <a href="cart/add/${item.id}">Add to cart</a> <br/> --%>
-<%-- 	</c:forEach> --%>
-
-
-<%-- 	<c:forEach var="category" items="${allCategories}"> --%>
-<%-- 		<a href="categories/${category.id}"><c:out value="${category.name}"/></a> <br/> --%>
-<%-- 	</c:forEach>	 --%>
 		
 </div>
     
- 
 
     <div class="learn-more">
 	  <div class="container">

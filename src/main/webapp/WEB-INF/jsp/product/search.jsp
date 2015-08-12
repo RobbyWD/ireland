@@ -11,22 +11,14 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Search</title>
 	<jsp:include page="/WEB-INF/jsp/head-include.jsp" />
+	<jsp:include page="/WEB-INF/jsp/menu.jsp" />
 </head>
 <body>
-
-<div class="nav">
-      <div class="container">
-        <ul class="pull-left">
-          <li><a href="">Home</a></li>
-          <li><a href="#">Browse</a></li>
-        </ul>
-        <ul class="pull-right">
-          <li><a href="user/register">Sign Up</a></li>
-          <li><a href="#">Log In</a></li>
-          <li><a href="cam">Webcams</a></li>
-        </ul>
-      </div>
-    </div>
+	<div class="neighborhood-guides">
+	    <div class="container">
+	    <h2>Search Products</h2>
+	    </div>
+ </div>
 
 	<div class="neighborhood-guides">
 	<h2>Search Products</h2>

@@ -8,23 +8,11 @@
     <jsp:include page="/WEB-INF/jsp/head-include.jsp" />
     <link rel="stylesheet" href="resources/css/bootstrap.css">
     <link rel="stylesheet" href="resources/css/main.css">
+    <jsp:include page="/WEB-INF/jsp/menu.jsp" />
     
   </head>
 <body>
 
- <div class="nav">
-      <div class="container">
-        <ul class="pull-left">
-          <li><a href="">Home</a></li>
-          <li><a href="#">Browse</a></li>
-        </ul>
-        <ul class="pull-right">
-          <li><a href="register">Sign Up</a></li>
-          <li><a href="login">Log In</a></li>
-          <li><a href="cam">Webcams</a></li>
-        </ul>
-      </div>
-    </div>
 
 <div class="container">
 ${loginError}

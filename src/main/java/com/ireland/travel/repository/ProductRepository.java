@@ -3,8 +3,9 @@ package com.ireland.travel.repository;
 
 import org.springframework.data.repository.PagingAndSortingRepository;
 
-import com.ireland.travel.model.Category;
-import com.ireland.travel.model.Product;
+import com.ireland.travel.domain.Category;
+import com.ireland.travel.domain.Product;
+
 import java.util.List;
 
 
