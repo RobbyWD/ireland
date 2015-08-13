@@ -9,7 +9,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 @Entity
-@Table(name = "customer")
+@Table(name = "users")
 public class Customer {
 
 	@Id
@@ -19,7 +19,7 @@ public class Customer {
 
 	@NotNull
 	@Size(max = 50, min = 2)
-	private String name;
+	private String username;
 
 	@NotNull
 	@Email
@@ -28,78 +28,14 @@ public class Customer {
 	private String firstName;
 
 	private String lastName;
+	
+	private boolean enabled = true;
 
 	@NotNull
 	private String password;
 
 	@Size(max = 20)
 	private String phone;
-
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public String getEmail() {
-		return this.email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public String getFirstName() {
-		return this.firstName;
-	}
-
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
-
-	public String getLastName() {
-		return this.lastName;
-	}
-
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
-
-	@JsonIgnore
-	public String getPassword() {
-		return this.password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
-	public String getPhone() {
-		return this.phone;
-	}
-
-	public void setPhone(String phone) {
-		this.phone = phone;
-	}
-
-	public Long getId() {
-		return this.id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((name == null) ? 0 : name.hashCode());
-		return result;
-	}
 
 	@Override
 	public boolean equals(Object obj) {
@@ -110,12 +46,86 @@ public class Customer {
 		if (getClass() != obj.getClass())
 			return false;
 		Customer other = (Customer) obj;
-		if (name == null) {
-			if (other.name != null)
+		if (username == null) {
+			if (other.username != null)
 				return false;
-		} else if (!name.equals(other.name))
+		} else if (!username.equals(other.username))
 			return false;
 		return true;
+	}
+
+	public String getEmail() {
+		return this.email;
+	}
+
+	public String getFirstName() {
+		return this.firstName;
+	}
+
+	public Long getId() {
+		return this.id;
+	}
+
+	public String getLastName() {
+		return this.lastName;
+	}
+
+	public String getName() {
+		return this.username;
+	}
+
+	@JsonIgnore
+	public String getPassword() {
+		return this.password;
+	}
+
+	public String getPhone() {
+		return this.phone;
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((username == null) ? 0 : username.hashCode());
+		return result;
+	}
+
+	public boolean isEnabled() {
+		return enabled;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public void setEnabled(boolean enabled) {
+		this.enabled = enabled;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+	public void setName(String name) {
+		this.username = name;
+	}
+
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
 	}
 
 }

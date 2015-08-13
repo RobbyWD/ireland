@@ -27,7 +27,7 @@
 	<div> Email: ${user.email}</div>
 </div>
 
-<a href="users/${user.name}/edit">Edit Profile</a>
+<%-- <a href="users/${user.name}/edit">Edit Profile</a> --%>
 
 </body>
 </html>

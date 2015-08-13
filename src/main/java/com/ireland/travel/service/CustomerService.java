@@ -1,7 +1,9 @@
 package com.ireland.travel.service;
 
 import com.google.common.collect.Lists;
+import com.ireland.travel.domain.Authority;
 import com.ireland.travel.domain.Customer;
+import com.ireland.travel.repository.AuthorityRepository;
 import com.ireland.travel.repository.CustomerRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +18,9 @@ public class CustomerService {
 	@Autowired
 	private CustomerRepository customerRepository;
 	
+	@Autowired
+	private AuthorityRepository authRepository;
+	
 	public long countAllCustomers() {
         return customerRepository.count();
     }
@@ -29,7 +34,7 @@ public class CustomerService {
     }
 	
 	public Customer findCustomer(String name) {
-        return customerRepository.findByNameEquals(name);
+        return customerRepository.findByUsernameEquals(name);
     }
 
 	public List<Customer> findAllCustomers() {
@@ -43,6 +48,7 @@ public class CustomerService {
 
 	public void saveCustomer(Customer customer) {
 		customerRepository.save(customer);
+		authRepository.save(new Authority(customer));
     }
 
 	public Customer updateCustomer(Customer customer) {

@@ -7,5 +7,5 @@ import com.ireland.travel.domain.Customer;
 
 
 public interface CustomerRepository extends PagingAndSortingRepository<Customer, Long> {
-    Customer findByNameEquals(String name);
+    Customer findByUsernameEquals(String name);
 }

@@ -49,6 +49,12 @@ public class ProductController {
 		model.addAttribute("products", productService.findAllProducts());
 		return "productlist";
 	}
+	
+	@RequestMapping(params = "search")
+	public String searchProducts(Model model) {
+		model.addAttribute("products", productService.findAllProducts());
+		return "product/search";
+	}
 
 	@RequestMapping(params = "create")
 	public String createForm(Model model) {
