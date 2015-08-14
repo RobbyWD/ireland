@@ -36,7 +36,7 @@ public class CustomerTest {
 	public void testJpaFind(){
 		Customer andy = new Customer();
 		andy.setEmail("randy@email.com");
-		andy.setName("Randy");
+		andy.setUsername("Randy");
 		andy.setPassword("password2");
 		andy.setPhone("123456");
 		
@@ -45,7 +45,7 @@ public class CustomerTest {
 		
 		List<Customer> locations = (List<Customer>) repository.findAll();
 		assertNotNull(locations);
-		assertEquals(andy.getName(), locations.get(locations.size()-1).getName()); 
+		assertEquals(andy.getUsername(), locations.get(locations.size()-1).getUsername()); 
 	}
 
 }

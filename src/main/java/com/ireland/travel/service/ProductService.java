@@ -1,17 +1,17 @@
 package com.ireland.travel.service;
 
-import com.google.common.base.Preconditions;
-import com.google.common.collect.Lists;
-import com.ireland.travel.domain.Product;
-import com.ireland.travel.repository.CategoryRepository;
-import com.ireland.travel.repository.ProductRepository;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.List;
+import com.google.common.base.Preconditions;
+import com.google.common.collect.Lists;
+import com.ireland.travel.domain.Product;
+import com.ireland.travel.repository.CategoryRepository;
+import com.ireland.travel.repository.ProductRepository;
 
 @Service
 @Transactional

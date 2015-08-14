@@ -1,16 +1,16 @@
 package com.ireland.travel.service;
 
-import com.google.common.collect.Lists;
-import com.ireland.travel.domain.Authority;
-import com.ireland.travel.domain.Customer;
-import com.ireland.travel.repository.AuthorityRepository;
-import com.ireland.travel.repository.CustomerRepository;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import com.google.common.collect.Lists;
+import com.ireland.travel.domain.Authority;
+import com.ireland.travel.domain.Customer;
+import com.ireland.travel.repository.AuthorityRepository;
+import com.ireland.travel.repository.CustomerRepository;
 
 @Service
 public class CustomerService {

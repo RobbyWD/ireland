@@ -4,6 +4,8 @@ package com.ireland.travel.web;
 
 import java.util.Map;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,8 +18,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.ireland.travel.domain.Customer;
 import com.ireland.travel.repository.CustomerRepository;
 import com.ireland.travel.service.CustomerService;
-
-import javax.validation.Valid;
 
 @Controller
 @RequestMapping("/users")
@@ -45,7 +45,7 @@ public class UserController {
 		}
 		else{
 			customerService.saveCustomer(customer);
-			return "redirect:/users/" + customer.getName();
+			return "redirect:/users/" + customer.getUsername();
 		}
 				
 	}
@@ -73,7 +73,7 @@ public class UserController {
 			return "user/register";
 		}
 		customerService.updateCustomer(customer);
-		return "redirect:/users/" + customer.getName();
+		return "redirect:/users/" + customer.getUsername();
 	}
 	
 }

@@ -13,8 +13,11 @@ import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 
+import lombok.Data;
+
 import org.codehaus.jackson.annotate.JsonIgnore;
 
+@Data
 @Entity
 @Table(name = "product")
 @XmlRootElement
@@ -45,61 +48,10 @@ public class Product {
     
     private int duration;
 
-	public String getName() {
-        return this.name;
-    }
-
-	public void setName(String name) {
-        this.name = name;
-    }
-
-	public String getDescription() {
-        return this.description;
-    }
-
-	public void setDescription(String description) {
-        this.description = description;
-    }
-
-	public String getImagePath() {
-        return this.imagePath;
-    }
-
-	public void setImagePath(String imagePath) {
-        this.imagePath = imagePath;
-    }
 	
 	@JsonIgnore @XmlTransient
 	public Category getCategory() {
         return this.category;
-    }
-
-	public void setCategory(Category category) {
-        this.category = category;
-    }
-
-	public Boolean getFeatured() {
-        return this.featured;
-    }
-
-	public void setFeatured(Boolean featured) {
-        this.featured = featured;
-    }
-
-	public double getPrice() {
-        return this.price;
-    }
-
-	public void setPrice(double price) {
-        this.price = price;
-    }
-
-	public Long getId() {
-        return this.id;
-    }
-
-	public void setId(Long id) {
-        this.id = id;
     }
 
 	@Override
@@ -137,15 +89,6 @@ public class Product {
 			return false;
 		return true;
 	}
-
-	public int getDuration() {
-		return duration;
-	}
-
-	public void setDuration(int duration) {
-		this.duration = duration;
-	}
-	
 
 		
 }

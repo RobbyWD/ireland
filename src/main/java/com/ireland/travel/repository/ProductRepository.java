@@ -1,12 +1,12 @@
 package com.ireland.travel.repository;
 
 
+import java.util.List;
+
 import org.springframework.data.repository.PagingAndSortingRepository;
 
 import com.ireland.travel.domain.Category;
 import com.ireland.travel.domain.Product;
-
-import java.util.List;
 
 
 public interface ProductRepository extends PagingAndSortingRepository<Product, Long> {
