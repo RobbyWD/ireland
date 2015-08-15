@@ -30,8 +30,8 @@ public class Authority {
 	@Size(max = 50, min = 2)
 	private String authority;
 	
-	public Authority(Customer customer){
-		this.username = customer.getUsername();
+	public Authority(User user){
+		this.username = user.getUsername();
 		this.authority = "ROLE_USER";	
 	}
 	

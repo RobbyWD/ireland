@@ -10,7 +10,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.ireland.travel.domain.Customer;
-import com.ireland.travel.service.CustomerService;
+import com.ireland.travel.domain.User;
+import com.ireland.travel.service.UserService;
 
 
 
@@ -18,7 +19,7 @@ import com.ireland.travel.service.CustomerService;
 public class LoginController {
 
 	@Autowired
-	private CustomerService customerService;
+	private UserService userService;
 	
 	
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
@@ -32,12 +33,12 @@ public class LoginController {
     		@RequestParam String password, HttpSession session, Model model) {
         
 		
-		Customer customer = customerService.loginCustomer(userId, password);
-		if (customer == null) {
+		User user = userService.loginUser(userId, password);
+		if (user == null) {
 			model.addAttribute("loginError", "Error logging in. Please try again");
 			return "login";
 		}
-		session.setAttribute("loggedInUser", customer);
+		session.setAttribute("loggedInUser", user);
         return "redirect:";
     }
 

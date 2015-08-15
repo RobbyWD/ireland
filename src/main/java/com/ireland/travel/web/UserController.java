@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.ireland.travel.domain.Customer;
 import com.ireland.travel.repository.CustomerRepository;
 import com.ireland.travel.service.CustomerService;
+import com.ireland.travel.service.UserService;
 
 @Controller
 @RequestMapping("/users")
@@ -26,6 +27,9 @@ public class UserController {
 	
 	@Autowired
 	CustomerService customerService;
+	
+	@Autowired
+	UserService userService;
 	
 	@Autowired
 	CustomerRepository repository;
@@ -45,6 +49,7 @@ public class UserController {
 		}
 		else{
 			customerService.saveCustomer(customer);
+			userService.saveUser(customer);
 			return "redirect:/users/" + customer.getUsername();
 		}
 				

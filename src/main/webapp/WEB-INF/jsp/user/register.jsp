@@ -28,8 +28,8 @@
  </div>
   <div class="container">
 	<form:form class="form-group form" name="input" method="post" action="users" modelAttribute="user">
-	<form:errors path="name" />
-	Login: <input type="text" name="name" /><br/>
+	<form:errors path="username" />
+	Login: <input type="text" name="username" /><br/>
 	Password: <input type="text" name="password" /><br/>
 	Email: <input type="text" name="email" /><br/>
 	Phone: <input type="text" name="phone" /><br/>
