@@ -29,7 +29,9 @@ public class User {
 	@Size(max = 50, min = 2)
 	private String username;
 	
-	private boolean enabled = true;
+	private boolean enabled;
+	
+	private Role role;
 
 	@NotNull
 	private String password;

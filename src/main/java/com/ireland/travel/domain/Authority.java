@@ -25,14 +25,13 @@ public class Authority {
 	@NotNull
 	@Size(max = 50, min = 2)
 	private String username;
-
+	
 	@NotNull
-	@Size(max = 50, min = 2)
 	private String authority;
 	
 	public Authority(User user){
 		this.username = user.getUsername();
-		this.authority = "ROLE_USER";	
+		this.authority = user.getRole().toString();	
 	}
 	
 	public Authority () {}

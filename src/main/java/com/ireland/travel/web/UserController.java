@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.ireland.travel.domain.Customer;
+import com.ireland.travel.domain.Role;
 import com.ireland.travel.repository.CustomerRepository;
 import com.ireland.travel.service.CustomerService;
 import com.ireland.travel.service.UserService;
@@ -48,8 +49,9 @@ public class UserController {
 			return "user/register";
 		}
 		else{
+			customer.setEnabled(true);
+			customer.setRole(Role.ROLE_USER);
 			customerService.saveCustomer(customer);
-			userService.saveUser(customer);
 			return "redirect:/users/" + customer.getUsername();
 		}
 				
