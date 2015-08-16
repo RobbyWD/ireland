@@ -37,6 +37,12 @@ public class CategoryController {
 		model.addAttribute("category", new Category());
 		return "category/create";
 	}
+	
+	@RequestMapping(params = "manage")
+	public String manageForm(Model model) {
+		model.addAttribute("categories", categoryService.getAllCategories());
+		return "category/manage";
+	}
 
 	@RequestMapping(method = RequestMethod.POST)
 	public String saveCategory(@ModelAttribute("category") @Valid Category category,
@@ -55,7 +61,7 @@ public class CategoryController {
 			return "category/register";
 		}
 		categoryService.saveCategory(category);
-		return "redirect:/categories/" + category.getId();
+		return "redirect:/categories?manage";
 	}
 	@RequestMapping(value = "/{id}")
 	public ModelAndView getCategory(@PathVariable("id") Long categoryId) {
@@ -70,6 +76,15 @@ public class CategoryController {
 		Category category = categoryService.findCategory(categoryId);
 		model.put("category", category);
 		return "category/edit";
+	}
+	
+	@RequestMapping(value = "/{id}/delete", method = RequestMethod.GET)
+	public String deleteCategory(@PathVariable("id") Long categoryId,
+			Map<String, Object> model) {
+		Category category = categoryService.findCategory(categoryId);
+		model.remove("category", category);
+		categoryService.deleteCategory(category);
+		return "redirect:/categories?manage";
 	}
 
 }

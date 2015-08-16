@@ -39,5 +39,6 @@
 	</form:form>
 	</div>
 	</div>
+		<a href="categories?manage">Back to management</a>
 </body>
 </html>

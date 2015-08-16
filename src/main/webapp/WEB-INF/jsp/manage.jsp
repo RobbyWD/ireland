@@ -28,7 +28,7 @@
         		<li><a href="products?manage">Product Management</a></li>
         	</ul>
         	 <ul class="pull-right">
-        	    <li><a href="categories?create">Category Management</a></li>
+        	    <li><a href="categories?manage">Category Management</a></li>
         	  </ul>
       	</div>
     </div>

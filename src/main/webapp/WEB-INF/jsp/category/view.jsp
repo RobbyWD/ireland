@@ -32,7 +32,7 @@
 
 	<h2>Products</h2>
 	
-	<c:forEach var="item" items="${category.products}">
+	<c:forEach var="item" items="${categories.products}">
 		<c:out value="${item.name}"/> <br/>
 	</c:forEach> 
 	</div>

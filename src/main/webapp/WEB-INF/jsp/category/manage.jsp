@@ -9,13 +9,13 @@
     <link rel="stylesheet" href="resources/css/main.css">
 	<jsp:include page="/WEB-INF/jsp/head-include.jsp" />
 	 <jsp:include page="/WEB-INF/jsp/menu.jsp" />
-<title>Product Management</title>
+<title>Category Management</title>
 </head>
 <body>
 	
 <div class="neighborhood-guides">
 	    <div class="container">
-	    <h2>Product Management</h2>
+	    <h2>Category Management</h2>
 	    </div>
  </div>
 
@@ -23,19 +23,20 @@
 	
 	<table class="table">
 		<tr>
-			<th> ID </th ><th>Product name </th> <th> View </th> <th>Edit</th> <th> Delete </th>   
+			<th>ID</th> <th>Category name</th> <th>View</th>  <th>Edit</th> <th>Delete</th>   
 		 </tr>
-		 <c:forEach var="item" items="${products}">
+		 <c:forEach var="item2" items="${categories}">
 		 	<tr>
-		 		<td>${item.id}</td><td>${item.name}</td>
-		 		<td><a href="products/${item.id}">View</a></td>
-		 		<td> <a href="products/${item.id}/edit">Edit</a></td>
-		 		<td><a href="products/${item.id}/delete">Delete</a></td>
+		 		<td>${item2.id}</td>
+		 		<td>${item2.name}</td>
+				<td> <a href="categories/${item2.id}">View</a> </td>
+				<td><a href="categories/${item2.id}/edit">Edit</a> </td>
+				 <td><a href="categories/${item2.id}/delete">Delete</a></td>
 		 	</tr>
 		 </c:forEach>
 	</table>
 	
-	<a href="products?create">Create new product</a>
+	<a href="categories?create">Create new category</a>
 	
 	</div>
 </body>
