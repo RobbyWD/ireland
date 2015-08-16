@@ -8,10 +8,10 @@
       <div class="container">
         <ul class="pull-left">
           <li><a href="">Home</a></li>
-          <li><a href="product?search">Search</a></li>
-          <sec:authorize ifAnyGranted="ROLE_ADMIN">
+          <li><a href="products?search">Search</a></li>
+<%--           <sec:authorize ifAnyGranted="ROLE_ADMIN"> --%>
           <li><a href="manage">Management</a></li>
-          </sec:authorize>
+<%--           </sec:authorize> --%>
         </ul>
         <ul class="pull-right">
 	        <c:choose>

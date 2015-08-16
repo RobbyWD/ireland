@@ -21,13 +21,17 @@
     
     <div class="neighborhood-guides">
     <div class="container">
-        <h4>Add products and categories, as much as you like :)</h4>
+        <h4>Management tab</h4>
       <div class="nav">
       	<div class="container">
         	<ul class="pull-left">
         		<li><a href="products?manage">Product Management</a></li>
         	</ul>
-        	 <ul class="pull-right">
+        	
+        	<ul class="pull-right">
+        		<li><a href="users?manage">User Management</a></li>
+        	</ul>
+        	 <ul class="pull-left">
         	    <li><a href="categories?manage">Category Management</a></li>
         	  </ul>
       	</div>

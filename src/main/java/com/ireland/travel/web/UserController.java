@@ -15,9 +15,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.ireland.travel.domain.Authority;
 import com.ireland.travel.domain.Customer;
 import com.ireland.travel.domain.Role;
-import com.ireland.travel.repository.CustomerRepository;
+import com.ireland.travel.domain.User;
+import com.ireland.travel.service.AuthService;
 import com.ireland.travel.service.CustomerService;
 import com.ireland.travel.service.UserService;
 
@@ -33,7 +35,8 @@ public class UserController {
 	UserService userService;
 	
 	@Autowired
-	CustomerRepository repository;
+	AuthService authService;
+	
 	
 	
 	@RequestMapping(params="register")
@@ -57,30 +60,56 @@ public class UserController {
 				
 	}
 	
+	@RequestMapping(params = "manage")
+	public String manageUsers(Model model) {
+		model.addAttribute("users", userService.findAllUsers());
+		return "user/manage";
+	}
+	
 	@RequestMapping (value="/{userId}")
 	public String getUserProfile (@PathVariable String userId, Model model){
-		Customer customer = customerService.findCustomer(userId);
-		model.addAttribute("user", customer);
+		User user = userService.findUser(userId);
+		model.addAttribute("user", user);
 		return"user/view";
+	}
+	
+	@RequestMapping (value="/{userId}/view")
+	public String getDetailedUserProfile (@PathVariable String userId, Model model){
+		User user = userService.findUser(userId);
+		model.addAttribute("user", user);
+		return"user/detailedview";
 	}
 	
 	
 	@RequestMapping(value = "/{userId}/edit", method = RequestMethod.GET)
 	public String editUserProfile(@PathVariable("userId") String userId,
 			Map<String, Object> model) {
-		Customer customer = customerService.findCustomer(userId);
-		model.put("user", customer);
+		Customer user = customerService.findCustomer(userId);
+		model.put("user", user);
 		return "user/edit";
 	}
 	
+	@RequestMapping(value = "/{userId}/delete", method = RequestMethod.GET)
+	public String deleteUserProfile(@PathVariable("userId") String userId,
+			Map<String, Object> model) {
+		User user = userService.findUser(userId);
+		userService.deleteUser(user);
+		authService.delete(user.getId());
+		model.remove("user", user);
+		
+		return "redirect:/users?manage";
+	}
+	
+	
 	@RequestMapping(value = "/{userId}", method = RequestMethod.POST)
-	public String updateUser(@ModelAttribute("user") @Valid Customer customer,
+	public String updateUser(@ModelAttribute("user") @Valid Customer user,
 			BindingResult result) {
 		if (result.hasErrors()) {
 			return "user/register";
 		}
-		customerService.updateCustomer(customer);
-		return "redirect:/users/" + customer.getUsername();
+		customerService.updateCustomer(user);
+//		authService.updateUser(new Authority(user));
+		return "redirect:/users/" + user.getUsername();
 	}
 	
 }

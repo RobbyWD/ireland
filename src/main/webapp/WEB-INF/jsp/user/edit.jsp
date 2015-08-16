@@ -20,9 +20,9 @@
 
 	<div class="container">
 	<form:form class="form-group form" name="input" method="post" modelAttribute="user"
-		action="users/${user.name}">
+		action="users/${user.username}">
 		<form:input type="hidden" path="id" />
-	Login: <input type="text" name="name" /><br/>
+	Login: <input type="text" name="username" /><br/>
 	Password: <input type="text" name="password" /><br/>
 	Email: <input type="text" name="email" /><br/>
 	Phone: <input type="text" name="phone" /><br/>

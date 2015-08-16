@@ -27,7 +27,7 @@
 		modelAttribute="product" action="products">
 		<div>
 			<label>Name: </label>
-			<form:input type="text" path="name" class="form-control"  />
+			<form:input type="text" path="name" class="form-control"/>
 			<form:errors path="name" />
 		</div>
 		<div>
