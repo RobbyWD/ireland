@@ -56,6 +56,7 @@
 			<input class="form-control submit" type="submit" value="Submit">
 		</div>
 	</form:form>
+	<a href="products?manage">Back to management</a>
 	</div>
 	</div>
 </body>

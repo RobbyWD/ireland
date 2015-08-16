@@ -55,6 +55,12 @@ public class ProductController {
 		model.addAttribute("products", productService.findAllProducts());
 		return "product/search";
 	}
+	
+	@RequestMapping(params = "manage")
+	public String manageProducts(Model model) {
+		model.addAttribute("products", productService.findAllProducts());
+		return "product/manage";
+	}
 
 	@RequestMapping(params = "create")
 	public String createForm(Model model) {
@@ -71,7 +77,7 @@ public class ProductController {
 			return "product/create";
 		}
 		productService.saveProduct(product);
-		return "redirect:/products/" + product.getId();
+		return "redirect:/products?manage";
 	}
 
 	@RequestMapping(value = "/{id}", method = RequestMethod.POST)
@@ -81,7 +87,7 @@ public class ProductController {
 			return "product/register";
 		}
 		productService.updateProduct(product);
-		return "redirect:/products/" + product.getId();
+		return "redirect:/products?manage";
 	}
 	@RequestMapping(value = "/{id}")
 	public ModelAndView getProduct(@PathVariable("id") Long productId) {
@@ -97,6 +103,15 @@ public class ProductController {
 		model.put("product", product);
 		model.put("categories", categoryService.getAllCategories());
 		return "product/edit";
+	}
+	
+	@RequestMapping(value = "/{id}/delete", method = RequestMethod.GET)
+	public String deleteProduct(@PathVariable("id") Long productId,
+			Map<String, Object> model) {
+		Product product = productService.findProduct(productId);
+		model.remove("product", product);
+		productService.deleteProduct(product);
+		return "redirect:/products?manage";
 	}
 
 	@ExceptionHandler(Exception.class)
