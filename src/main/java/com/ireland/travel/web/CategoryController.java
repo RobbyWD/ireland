@@ -32,59 +32,11 @@ public class CategoryController {
 		this.categoryService = categoryService;
 	}
 
-	@RequestMapping(params = "create")
-	public String createForm(Model model) {
-		model.addAttribute("category", new Category());
-		return "category/create";
-	}
 	
-	@RequestMapping(params = "manage")
-	public String manageForm(Model model) {
-		model.addAttribute("categories", categoryService.getAllCategories());
-		return "category/manage";
-	}
-
-	@RequestMapping(method = RequestMethod.POST)
-	public String saveCategory(@ModelAttribute("category") @Valid Category category,
-			BindingResult result) {
-		if (result.hasErrors()) {
-			return "category/register";
-		}
-		categoryService.saveCategory(category);
-		return "redirect:/categories/" + category.getId();
-	}
-
-	@RequestMapping(value = "/{id}", method = RequestMethod.POST)
-	public String updateCategory(@ModelAttribute("category") @Valid Category category,
-			BindingResult result) {
-		if (result.hasErrors()) {
-			return "category/register";
-		}
-		categoryService.saveCategory(category);
-		return "redirect:/categories?manage";
-	}
 	@RequestMapping(value = "/{id}")
 	public ModelAndView getCategory(@PathVariable("id") Long categoryId) {
 		Category category = categoryService.findCategory(categoryId);
 		return new ModelAndView("category/view", "category", category);
 		
 	}
-	
-	@RequestMapping(value = "/{id}/edit", method = RequestMethod.GET)
-	public String editCategory(@PathVariable("id") Long categoryId,
-			Map<String, Object> model) {
-		Category category = categoryService.findCategory(categoryId);
-		model.put("category", category);
-		return "category/edit";
-	}
-	
-	@RequestMapping(value = "/{id}/delete", method = RequestMethod.GET)
-	public String deleteCategory(@PathVariable("id") Long categoryId,
-			Map<String, Object> model) {
-		Category category = categoryService.findCategory(categoryId);
-		model.remove("category", category);
-		categoryService.deleteCategory(category);
-		return "redirect:/categories?manage";
-	}
-
 }

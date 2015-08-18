@@ -1,4 +1,4 @@
-package com.ireland.travel.web;
+package com.ireland.travel.management;
 
 
 
@@ -59,7 +59,13 @@ public class UserController {
 		}
 				
 	}
-		
+	
+	@RequestMapping(params = "manage")
+	public String manageUsers(Model model) {
+		model.addAttribute("users", userService.findAllUsers());
+		return "user/manage";
+	}
+	
 	@RequestMapping (value="/{userId}")
 	public String getUserProfile (@PathVariable String userId, Model model){
 		User user = userService.findUser(userId);
@@ -81,6 +87,17 @@ public class UserController {
 		Customer user = customerService.findCustomer(userId);
 		model.put("user", user);
 		return "user/edit";
+	}
+	
+	@RequestMapping(value = "/{userId}/delete", method = RequestMethod.GET)
+	public String deleteUserProfile(@PathVariable("userId") String userId,
+			Map<String, Object> model) {
+		User user = userService.findUser(userId);
+		userService.deleteUser(user);
+		authService.delete(user.getId());
+		model.remove("user", user);
+		
+		return "redirect:/users?manage";
 	}
 	
 	
