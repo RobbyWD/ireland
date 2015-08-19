@@ -1,13 +1,15 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-<modelVersion>4.0.0</modelVersion>
-  <groupId>com.ireland.travel</groupId>
-  <artifactId>ireland</artifactId>
-  <packaging>pom</packaging>
-  <version>1.0.0-BUILD-SNAPSHOT</version>
-  <name>travel</name>
-  <url>http://maven.apache.org</url>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+ 
+  <artifactId>entity</artifactId>
+   <packaging>jar</packaging>
   
+  
+  	<version>1.0</version>
+	<name>entity</name>
+	<url>http://maven.apache.org</url>
+	
+
 <properties>
 
 		<!-- Generic properties -->
@@ -63,29 +65,6 @@
 			<version>${spring-framework.version}</version>
 		</dependency>
 		
-		<!-- SPRING Security  -->
-		<dependency>
-			<groupId>org.springframework.security</groupId>
-			<artifactId>spring-security-web</artifactId>
-			<version>4.0.2.RELEASE</version>
-		</dependency>
-		
-		<dependency>
-			<groupId>org.springframework.security</groupId>
-			<artifactId>spring-security-taglibs</artifactId>
-			<version>3.2.5.RELEASE</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework.security</groupId>
-			<artifactId>spring-security-config</artifactId>
-			<version>4.0.2.RELEASE</version>
-		</dependency>
-		<dependency>
-			<groupId>commons-logging</groupId>
-			<artifactId>commons-logging</artifactId>
-			<version>1.2</version>
-		</dependency>		
 
 		<!-- Logging with SLF4J & LogBack -->
 		<dependency>
@@ -172,14 +151,7 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
-		
-	<!-- MySQL -->
-	<dependency>
-		<groupId>mysql</groupId>
-		<artifactId>mysql-connector-java</artifactId>
-		<version>5.1.21</version>
-	</dependency>
-	
+
          
     <!-- Test Artifacts -->
 		<dependency>
@@ -214,21 +186,8 @@
             <groupId>org.springframework.data</groupId>
             <artifactId>spring-data-jpa</artifactId>
             <version>1.8.0.RELEASE</version>
-        </dependency>
-        
-        <!-- Spring HATEOAS -->
-		<dependency>
-			<groupId>org.springframework.hateoas</groupId>
-			<artifactId>spring-hateoas</artifactId>
-			<version>0.16.0.RELEASE</version>
-		</dependency>
-		
-        <!-- Logging -->
-<!--         <dependency> -->
-<!--             <groupId>org.slf4j</groupId> -->
-<!--             <artifactId>slf4j-api</artifactId> -->
-<!--             <version>${slf4j.version}</version> -->
-<!--         </dependency> -->
+        </dependency>	
+
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>jcl-over-slf4j</artifactId>
@@ -243,14 +202,6 @@
 			<artifactId>javax.inject</artifactId>
 			<version>1</version>
 		</dependency>
-
-		<!-- Servlet -->
-<!-- 		<dependency> -->
-<!-- 			<groupId>javax.servlet</groupId> -->
-<!-- 			<artifactId>servlet-api</artifactId> -->
-<!-- 			<version>2.5</version> -->
-<!-- 			<scope>provided</scope> -->
-<!-- 		</dependency> -->
 
 			<dependency>
 		        <groupId>javax.servlet</groupId>
@@ -268,13 +219,6 @@
 			<artifactId>jstl</artifactId>
 			<version>1.2</version>
 		</dependency>
-
-		<!--  Freemarker -->
-		<dependency>
-			<groupId>org.freemarker</groupId>
-			<artifactId>freemarker</artifactId>
-			<version>2.3.20</version>
-		</dependency>
 		
 		<!-- Apache Tiles -->
 		<dependency>
@@ -287,14 +231,36 @@
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
             <version>15.0</version>
-        </dependency>
-        <dependency>
-        	<groupId>com.ireland.entity</groupId>
-			<artifactId>entity</artifactId>
-			<version>1.0</version>
-        </dependency>
+        </dependency>  
 	</dependencies>
-	<modules>
-		<module>management</module>
-	</modules>
+	
+<build>
+		<finalName>entity</finalName>
+		<plugins>
+
+			<plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-install-plugin</artifactId>
+        <version>${maven-install-plugin.version}</version>
+        <executions>
+            <execution>
+                <phase>install</phase>
+                <goals>
+                    <goal>install-file</goal>
+                </goals>
+                <configuration>
+                    <groupId>${project.groupId}</groupId>
+                    <artifactId>${project.artifactId}</artifactId>
+                    <version>${project.version}</version>
+                    <packaging>jar</packaging>
+                    <file>${basedir}/target/${project.artifactId}-${project.version}.jar</file>
+                </configuration>
+            </execution>
+        </executions>
+    </plugin>
+
+		</plugins>
+	</build>
+
+	<groupId>com.ireland.entity</groupId>
 </project>

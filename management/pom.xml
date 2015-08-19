@@ -11,14 +11,6 @@
   <packaging>war</packaging>
   <name>management Maven Webapp</name>
   <url>http://maven.apache.org</url>
-<!--   <dependencies> -->
-<!--     <dependency> -->
-<!--       <groupId>junit</groupId> -->
-<!--       <artifactId>junit</artifactId> -->
-<!--       <version>3.8.1</version> -->
-<!--       <scope>test</scope> -->
-<!--     </dependency> -->
-<!--   </dependencies> -->
 
 <dependencies>
 		<!-- Spring and Transactions -->
@@ -277,6 +269,12 @@
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
             <version>15.0</version>
+        </dependency>
+        
+        <dependency>
+        	<groupId>com.ireland.entity</groupId>
+			<artifactId>entity</artifactId>
+			<version>1.0</version>
         </dependency>
 
 	</dependencies>
