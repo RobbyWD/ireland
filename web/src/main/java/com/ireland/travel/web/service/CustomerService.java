@@ -1,24 +1,26 @@
 package com.ireland.travel.web.service;
 
-import java.util.List;
-
+import com.google.common.collect.Lists;
 import com.ireland.travel.entity.domain.Authority;
 import com.ireland.travel.entity.domain.Customer;
 import com.ireland.travel.web.repository.AuthorityRepository;
 import com.ireland.travel.web.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
-import com.google.common.collect.Lists;
+import java.util.List;
 
 
 @Service
 public class CustomerService {
-	
+
+	@Qualifier("customerRepository")
 	@Autowired
 	private CustomerRepository customerRepository;
-	
+
+	@Qualifier("authorityRepository")
 	@Autowired
 	private AuthorityRepository authRepository;
 	
