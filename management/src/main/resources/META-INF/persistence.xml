@@ -3,13 +3,13 @@
         xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
         version="2.0">
     <persistence-unit name="punit">
-    <class>com.ireland.travel.domain.Authority</class>
-    <class>com.ireland.travel.domain.Category</class>
-    <class>com.ireland.travel.domain.Customer</class>
-    <class>com.ireland.travel.domain.Product</class>
-    <class>com.ireland.travel.domain.Purchase</class>
-    <class>com.ireland.travel.domain.PurchaseItem</class>
-    <class>com.ireland.travel.domain.User</class>
+    <class>com.ireland.travel.entity.domain.Authority</class>
+    <class>com.ireland.travel.entity.domain.Category</class>
+    <class>com.ireland.travel.entity.domain.Customer</class>
+    <class>com.ireland.travel.entity.domain.Product</class>
+    <class>com.ireland.travel.entity.domain.Purchase</class>
+    <class>com.ireland.travel.entity.domain.PurchaseItem</class>
+    <class>com.ireland.travel.entity.domain.User</class>
     
     </persistence-unit>
 </persistence>

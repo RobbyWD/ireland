@@ -1,42 +1,17 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>entity</artifactId>
-    <groupId>com.ireland.entity</groupId>
-    <packaging>jar</packaging>
-
-
-    <version>1.0</version>
-    <name>entity</name>
-
+    <artifactId>web</artifactId>
+    <packaging>war</packaging>
+    <name>Web module</name>
+    <url>http://maven.apache.org</url>
     <parent>
         <artifactId>ireland</artifactId>
         <groupId>com.ireland.travel</groupId>
         <version>1.0.0-BUILD-SNAPSHOT</version>
     </parent>
-
-    <properties>
-
-        <!-- Generic properties -->
-        <java.version>1.7</java.version>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-
-        <!-- Spring -->
-        <spring-framework.version>4.1.6.RELEASE</spring-framework.version>
-
-        <!-- Hibernate / JPA -->
-        <hibernate.version>4.3.8.Final</hibernate.version>
-
-        <!-- Logging -->
-        <logback.version>1.0.13</logback.version>
-        <slf4j.version>1.7.5</slf4j.version>
-
-        <!-- Test -->
-        <junit.version>4.12</junit.version>
-
-    </properties>
 
     <dependencies>
         <!-- Spring and Transactions -->
@@ -71,6 +46,29 @@
             <version>${spring-framework.version}</version>
         </dependency>
 
+        <!-- SPRING Security  -->
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-web</artifactId>
+            <version>4.0.2.RELEASE</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-taglibs</artifactId>
+            <version>3.2.5.RELEASE</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-config</artifactId>
+            <version>4.0.2.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-logging</groupId>
+            <artifactId>commons-logging</artifactId>
+            <version>1.2</version>
+        </dependency>
 
         <!-- Logging with SLF4J & LogBack -->
         <dependency>
@@ -158,6 +156,13 @@
             </exclusions>
         </dependency>
 
+        <!-- MySQL -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.21</version>
+        </dependency>
+
 
         <!-- Test Artifacts -->
         <dependency>
@@ -194,6 +199,19 @@
             <version>1.8.0.RELEASE</version>
         </dependency>
 
+        <!-- Spring HATEOAS -->
+        <dependency>
+            <groupId>org.springframework.hateoas</groupId>
+            <artifactId>spring-hateoas</artifactId>
+            <version>0.16.0.RELEASE</version>
+        </dependency>
+
+        <!-- Logging -->
+        <!--         <dependency> -->
+        <!--             <groupId>org.slf4j</groupId> -->
+        <!--             <artifactId>slf4j-api</artifactId> -->
+        <!--             <version>${slf4j.version}</version> -->
+        <!--         </dependency> -->
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>jcl-over-slf4j</artifactId>
@@ -208,6 +226,14 @@
             <artifactId>javax.inject</artifactId>
             <version>1</version>
         </dependency>
+
+        <!-- Servlet -->
+        <!-- 		<dependency> -->
+        <!-- 			<groupId>javax.servlet</groupId> -->
+        <!-- 			<artifactId>servlet-api</artifactId> -->
+        <!-- 			<version>2.5</version> -->
+        <!-- 			<scope>provided</scope> -->
+        <!-- 		</dependency> -->
 
         <dependency>
             <groupId>javax.servlet</groupId>
@@ -226,6 +252,13 @@
             <version>1.2</version>
         </dependency>
 
+        <!--  Freemarker -->
+        <dependency>
+            <groupId>org.freemarker</groupId>
+            <artifactId>freemarker</artifactId>
+            <version>2.3.20</version>
+        </dependency>
+
         <!-- Apache Tiles -->
         <dependency>
             <groupId>org.apache.tiles</groupId>
@@ -239,6 +272,12 @@
             <version>15.0</version>
         </dependency>
         <dependency>
+            <groupId>com.ireland.entity</groupId>
+            <artifactId>entity</artifactId>
+            <version>${com.ireland.entity.version}</version>
+        </dependency>
+
+        <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>1.16.6</version>
@@ -246,34 +285,7 @@
         </dependency>
     </dependencies>
 
-
-    <build>
-        <finalName>entity</finalName>
-        <plugins>
-
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-install-plugin</artifactId>
-                <version>${maven-install-plugin.version}</version>
-                <executions>
-                    <execution>
-                        <phase>install</phase>
-                        <goals>
-                            <goal>install-file</goal>
-                        </goals>
-                        <configuration>
-                            <groupId>${project.groupId}</groupId>
-                            <artifactId>${project.artifactId}</artifactId>
-                            <version>${project.version}</version>
-                            <packaging>jar</packaging>
-                            <file>${basedir}/target/${project.artifactId}.jar</file>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-
-        </plugins>
+       <build>
+        <finalName>web</finalName>
     </build>
-
-
 </project>
