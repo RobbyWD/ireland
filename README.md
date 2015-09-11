@@ -4,6 +4,7 @@ Pet project by Roman Wyhowski
 --
 ####Requirements
 1) [Vagrant] (https://www.vagrantup.com/)
+2) [VirtualBox] (https://www.virtualbox.org/)
 --
 ####Instalation
 ```
