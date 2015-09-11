@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.google.common.collect.Lists;
-import com.ireland.travel.domain.Category;
+import com.ireland.travel.entity.domain.Category;
 import com.ireland.travel.repository.CategoryRepository;
 
 @Service

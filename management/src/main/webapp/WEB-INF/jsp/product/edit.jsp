@@ -43,6 +43,11 @@
 			<label>Duration: </label>
 			<form:textarea class="form-control" path="duration" />
 			<form:errors path="duration" />
+		</div>
+		<div>
+			<label>Image: </label>
+			<form:textarea class="form-control" path="imagePath" />
+			<form:errors path="imagePath" />
 		</div>	
 		<div>
 			<label>Category:</label>

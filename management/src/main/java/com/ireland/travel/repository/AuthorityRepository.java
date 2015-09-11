@@ -3,7 +3,7 @@ package com.ireland.travel.repository;
 
 import org.springframework.data.repository.PagingAndSortingRepository;
 
-import com.ireland.travel.domain.Authority;
+import com.ireland.travel.entity.domain.Authority;
 
 
 public interface AuthorityRepository extends PagingAndSortingRepository<Authority, Long> {

@@ -7,8 +7,8 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import com.google.common.collect.Lists;
-import com.ireland.travel.domain.Authority;
-import com.ireland.travel.domain.Customer;
+import com.ireland.travel.entity.domain.Authority;
+import com.ireland.travel.entity.domain.Customer;
 import com.ireland.travel.repository.AuthorityRepository;
 import com.ireland.travel.repository.CustomerRepository;
 

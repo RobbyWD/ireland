@@ -5,8 +5,8 @@ import java.util.List;
 
 import org.springframework.data.repository.PagingAndSortingRepository;
 
-import com.ireland.travel.domain.Category;
-import com.ireland.travel.domain.Product;
+import com.ireland.travel.entity.domain.Category;
+import com.ireland.travel.entity.domain.Product;
 
 
 public interface ProductRepository extends PagingAndSortingRepository<Product, Long> {

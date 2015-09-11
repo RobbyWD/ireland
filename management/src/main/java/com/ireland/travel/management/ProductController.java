@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.ireland.travel.domain.Product;
+import com.ireland.travel.entity.domain.Product;
 import com.ireland.travel.service.CategoryService;
 import com.ireland.travel.service.ProductService;
 
