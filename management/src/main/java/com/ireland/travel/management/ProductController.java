@@ -1,4 +1,4 @@
-package com.ireland.travel.web.web;
+package com.ireland.travel.management;
 
 
 import java.util.Map;
@@ -20,8 +20,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.ireland.travel.entity.domain.Product;
-import com.ireland.travel.web.service.CategoryService;
-import com.ireland.travel.web.service.ProductService;
+import com.ireland.travel.service.CategoryService;
+import com.ireland.travel.service.ProductService;
 
 
 
@@ -56,14 +56,63 @@ public class ProductController {
 		return "product/search";
 	}
 	
-	
+	@RequestMapping(params = "manage")
+	public String manageProducts(Model model) {
+		model.addAttribute("products", productService.findAllProducts());
+		return "product/manage";
+	}
+
+	@RequestMapping(params = "create")
+	public String createForm(Model model) {
+		model.addAttribute("product", new Product());
+		model.addAttribute("categories", categoryService.getAllCategories());
+		return "product/create";
+	}
+
+	@RequestMapping(method = RequestMethod.POST)
+	public String saveProduct(@ModelAttribute("product") @Valid Product product,
+			BindingResult result, Model model) {
+		if (result.hasErrors()) {
+			model.addAttribute("categories", categoryService.getAllCategories());
+			return "product/create";
+		}
+		productService.saveProduct(product);
+		return "redirect:/products?manage";
+	}
+
+	@RequestMapping(value = "/{id}", method = RequestMethod.POST)
+	public String updateProduct(@ModelAttribute("product") @Valid Product product,
+			BindingResult result) {
+		if (result.hasErrors()) {
+			return "product/register";
+		}
+		productService.updateProduct(product);
+		return "redirect:/products?manage";
+	}
 	@RequestMapping(value = "/{id}")
 	public ModelAndView getProduct(@PathVariable("id") Long productId) {
 		Product product = productService.findProduct(productId);
 		return new ModelAndView("product/view", "product", product);
 		
 	}
-
+	
+	@RequestMapping(value = "/{id}/edit", method = RequestMethod.GET)
+	public String editProduct(@PathVariable("id") Long productId,
+			Map<String, Object> model) {
+		Product product = productService.findProduct(productId);
+		model.put("product", product);
+		model.put("categories", categoryService.getAllCategories());
+		return "product/edit";
+	}
+	
+	@RequestMapping(value = "/{id}/delete", method = RequestMethod.GET)
+	public String deleteProduct(@PathVariable("id") Long productId,
+			Map<String, Object> model) {
+		Product product = productService.findProduct(productId);
+		model.remove("product", product);
+		productService.deleteProduct(product);
+		return "redirect:/products?manage";
+	}
 
 	@ExceptionHandler(Exception.class)
 	  public ModelAndView errorHandler(HttpServletRequest req, Exception exception) {

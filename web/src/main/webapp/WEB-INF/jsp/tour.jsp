@@ -37,10 +37,17 @@ Please browse our wide selection of Ireland tours from 5 to 9 days in length bel
 	
 	<table class="table">
 		<tr>
-			<th>Duration </th> <th>Tour name</th> <th> Description </th> <th> Price </th> <th>Order</th> 
+			<th></th><th>Duration</th> <th>Tour name</th> <th> Description </th> <th> Price </th> <th>Order</th> 
 		 </tr>
 		 <c:forEach var="item" items="${featuredProducts}">
 		 	<tr>
+		 		
+		 		<td>
+			 		<div class="thumbnail">
+			 			<img src= "${item.imagePath}"/>
+			 		</div>
+		 		</td>
+		 		
 		 		<td>${item.duration}</td> <td>${item.name}</td> <td>${item.description}</td> <td>${item.price}</td> <td><a href="cart/add/${item.id}">Add to cart</a></td>
 		 	</tr>
 		 </c:forEach>
