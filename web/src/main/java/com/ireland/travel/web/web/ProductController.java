@@ -1,28 +1,21 @@
 package com.ireland.travel.web.web;
 
 
-import java.util.Map;
-
 import javax.servlet.http.HttpServletRequest;
-import javax.validation.Valid;
 
+import com.ireland.travel.web.service.CategoryService;
+import com.ireland.travel.web.service.ProductService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.ireland.travel.entity.domain.Product;
-import com.ireland.travel.web.service.CategoryService;
-import com.ireland.travel.web.service.ProductService;
-
 
 
 @Controller
