@@ -1,4 +1,4 @@
-# ireland
+# Ireland Tours
 Pet project by Roman Wyhowski
 
 --
