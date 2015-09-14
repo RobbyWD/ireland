@@ -1,6 +1,5 @@
 package com.ireland.travel.entity.domain;
 
-import java.math.BigDecimal;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -46,7 +45,7 @@ public class Product {
 
     private Boolean featured;
 
-    private BigDecimal price;
+    private long price;
     
     private int duration;
 

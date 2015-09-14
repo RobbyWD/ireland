@@ -1,5 +1,6 @@
 package com.ireland.travel.web.beans;
 
+import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
@@ -53,8 +54,8 @@ public class Cart {
 		return contents.toString();
 	}
 	
-	public double getTotalCost() {
-		double totalCost = 0;
+	public long getTotalCost() {
+		long totalCost = 0;
 		for (Product product : contents.keySet()) {
 			totalCost += product.getPrice();
 		}
