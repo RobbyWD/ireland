@@ -5,9 +5,9 @@
 <html>
 <head>
 <title>View product</title>
-	<link href="resources/css/shift.css" rel="stylesheet">   
-    <link rel="stylesheet" href="resources/css/bootstrap.css">
-    <link rel="stylesheet" href="resources/css/main.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/shift.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/bootstrap.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/main.css">
 	<jsp:include page="/WEB-INF/jsp/head-include.jsp" />
 	<jsp:include page="/WEB-INF/jsp/menu.jsp" />
 </head>
