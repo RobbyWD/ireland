@@ -51,6 +51,8 @@ public class CategoryController {
 		if (result.hasErrors()) {
 			return "category/register";
 		}
+		if (category.getDescription().equals(null) || category.getName().equals(null)) return "redirect:/categories?manage";
+		if (category.getDescription().equals("") || category.getName().equals("")) return "redirect:/categories?manage";
 		categoryService.saveCategory(category);
 		return "redirect:/categories/" + category.getId();
 	}
@@ -61,6 +63,8 @@ public class CategoryController {
 		if (result.hasErrors()) {
 			return "category/register";
 		}
+		if (category.getDescription().equals(null) || category.getName().equals(null)) return "redirect:/categories?manage";
+		if (category.getDescription().equals("") || category.getName().equals("")) return "redirect:/categories?manage";
 		categoryService.saveCategory(category);
 		return "redirect:/categories?manage";
 	}

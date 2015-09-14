@@ -76,6 +76,7 @@ public class ProductController {
 			model.addAttribute("categories", categoryService.getAllCategories());
 			return "product/create";
 		}
+		if (product.getDescription().isEmpty() ||product.getName().isEmpty() || product.getCategory().equals(null)|| product.getPrice()==0)return "product/create";
 		productService.saveProduct(product);
 		return "redirect:/products?manage";
 	}
@@ -86,6 +87,7 @@ public class ProductController {
 		if (result.hasErrors()) {
 			return "product/register";
 		}
+		if (product.getDescription().isEmpty() ||product.getName().isEmpty() || product.getCategory().equals(null)|| product.getPrice()==0)return "redirect:/products?manage";
 		productService.updateProduct(product);
 		return "redirect:/products?manage";
 	}
