@@ -43,28 +43,13 @@ public class ProductController {
 	public void setProductService(ProductService productService) {
 		this.productService = productService;
 	}
-	
-	@RequestMapping(params = "ftl")
-	public String getProducts(Model model) {
-		model.addAttribute("products", productService.findAllProducts());
-		return "productlist";
-	}
-	
+		
 	@RequestMapping(params = "search")
 	public String searchProducts(Model model) {
 		model.addAttribute("products", productService.findAllProducts());
 		return "product/search";
 	}
 	
-	
-	@RequestMapping(value = "/{id}")
-	public ModelAndView getProduct(@PathVariable("id") Long productId) {
-		Product product = productService.findProduct(productId);
-		return new ModelAndView("product/view", "product", product);
-		
-	}
-
-
 	@ExceptionHandler(Exception.class)
 	  public ModelAndView errorHandler(HttpServletRequest req, Exception exception) {
 	    logger.error("Request: " + req.getRequestURL() + " raised " + exception);

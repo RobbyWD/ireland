@@ -33,10 +33,10 @@ public class CategoryController {
 	}
 
 	
-	@RequestMapping(value = "/{id}")
-	public ModelAndView getCategory(@PathVariable("id") Long categoryId) {
-		Category category = categoryService.findCategory(categoryId);
-		return new ModelAndView("category/view", "category", category);
-		
-	}
+//	@RequestMapping(value = "/{id}")
+//	public ModelAndView getCategory(@PathVariable("id") Long categoryId) {
+//		Category category = categoryService.findCategory(categoryId);
+//		return new ModelAndView("category/view", "category", category);
+//		
+//	}
 }
