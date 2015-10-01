@@ -33,7 +33,7 @@
         	</ul>
         	
         	<ul class="pull-right">
-        		<li><a href="csv">Upload CSV</a></li>
+        		<li><a href="upload">Upload CSV</a></li>
         	</ul>
         	 <ul class="pull-left">
         	    <li><a href="categories?manage">Category Management</a></li>

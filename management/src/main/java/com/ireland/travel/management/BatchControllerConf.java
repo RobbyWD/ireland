@@ -28,7 +28,7 @@ import com.ireland.travel.entity.domain.Product;
 
 @Configuration
 @EnableBatchProcessing
-public class BatchController {
+public class BatchControllerConf {
 	
 	@Autowired
 	JobExecutionListener listener;
@@ -83,16 +83,7 @@ public class BatchController {
     public JdbcTemplate jdbcTemplate(DataSource dataSource) {
         return new JdbcTemplate(dataSource);
     }
-    
-//    @Bean
-//	public DataSource getDataSource() {
-//	    BasicDataSource dataSource = new BasicDataSource();
-//	    dataSource.setDriverClassName("com.mysql.jdbc.Driver");
-//	    dataSource.setUrl("jdbc:mysql://localhost:3306/ireland_travel?autoReconnect=true");
-//	    dataSource.setUsername("root");
-//	    dataSource.setPassword("awdf12");
-//	    return dataSource;
-//	}
+   
     
 
 }

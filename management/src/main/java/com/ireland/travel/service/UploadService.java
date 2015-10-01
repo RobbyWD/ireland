@@ -1,50 +1,32 @@
 package com.ireland.travel.service;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
-
+import org.springframework.batch.core.Job;
+import org.springframework.batch.core.JobExecution;
+import org.springframework.batch.core.JobParameters;
+import org.springframework.batch.core.launch.JobLauncher;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-import com.ireland.travel.entity.domain.Product;
-
+@Service
 public class UploadService {
 	
 	@Autowired
-	private ProductService service;
+	JobLauncher jobLauncher;
 	
-	 public void upload(String csvFile) {
-
-			BufferedReader br = null;
-			String line = "";
-			String cvsSplitBy = ",";
-
-			try {
-
-				br = new BufferedReader(new FileReader(csvFile));
-				while ((line = br.readLine()) != null) {
-
-					String[] data = line.split(cvsSplitBy);
-					service.saveProduct(new Product(data));
-
-				}
-
-			} catch (FileNotFoundException e) {
-				e.printStackTrace();
-			} catch (IOException e) {
-				e.printStackTrace();
-			} finally {
-				if (br != null) {
-					try {
-						br.close();
-					} catch (IOException e) {
-						e.printStackTrace();
-					}
-				}
-			}
-
-			System.out.println("File " +csvFile+ " succesfully uploaded");
-		  }
+	@Autowired
+	Job job;
+	
+	 public void upload() {
+		 try {
+		    	
+ 		JobExecution execution = jobLauncher.run(job, new JobParameters());
+ 		System.out.println("Exit Status : " + execution.getStatus());
+ 	
+ 		} catch (Exception e) {
+ 			e.printStackTrace();
+ 		}
+ 	
+			
+	 }
 
 }
