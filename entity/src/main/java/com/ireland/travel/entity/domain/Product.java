@@ -48,8 +48,19 @@ public class Product {
     private long price;
     
     private int duration;
-
-	
+    
+    
+    public Product(){}
+    
+	public Product(String[]values){
+		this.name=values[0];
+		this.description = values[1];
+		this.imagePath = values[2];
+		this.price=Integer.parseInt(values[3]);
+		this.duration=Integer.parseInt(values[4]);
+		this.featured=true;
+	}
+    
 	@JsonIgnore @XmlTransient
 	public Category getCategory() {
         return this.category;

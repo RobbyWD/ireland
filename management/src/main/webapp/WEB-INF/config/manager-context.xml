@@ -13,12 +13,28 @@
 
     <import resource="jpaManagerContext.xml"/>
     <import resource="security-config.xml"/>
+<!--     <import resource="batch-config.xml"/> -->
 
     <bean id="messageSource"
           class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
         <property name="basename" value="classpath:messages" />
         <property name="defaultEncoding" value="UTF-8" />
     </bean>
+    
+    
+     <!-- stored metadata in database -->
+<!--   <bean id="jobRepository" -->
+<!-- 	class="org.springframework.batch.core.repository.support.JobRepositoryFactoryBean"> -->
+<!-- 	<property name="dataSource" ref="dataSource" /> -->
+<!-- 	<property name="transactionManager" ref="batchTransactionManager" /> -->
+<!-- 	<property name="databaseType" value="mysql" /> -->
+<!--   </bean> -->
+  
+<!--    <bean id="jobLauncher" -->
+<!-- 	class="org.springframework.batch.core.launch.support.SimpleJobLauncher"> -->
+<!-- 	<property name="jobRepository" ref="jobRepository" /> -->
+<!--   </bean> -->
+    
 
 
 
