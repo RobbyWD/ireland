@@ -7,8 +7,9 @@ import org.springframework.batch.core.launch.JobLauncher;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.ireland.travel.entity.domain.Report;
+import lombok.Data;
 
-
+@Data
 @Service
 public class UploadService {
 	
@@ -21,13 +22,15 @@ public class UploadService {
 	@Autowired
 	ReportService reportService;
 	
+	private JobExecution execution;
+	
 	 public void upload() {
 		 try {
 		    	
- 		JobExecution execution = jobLauncher.run(job, new JobParameters());
- 		Report report = new Report(job.getName(),"Uploading Tours", execution.getStartTime().toString(),execution.getEndTime().toString(),
- 				execution.getStatus().toString(),"Failte Ireland");
- 		reportService.saveReport(report);	
+ 		execution = jobLauncher.run(job, new JobParameters());
+// 		Report report = new Report(job.getName(),"Uploading Tours", execution.getStartTime().toString(),execution.getEndTime().toString(),
+// 				execution.getStatus().toString(),"Failte Ireland");
+// 		reportService.saveReport(report);	
  		} catch (Exception e) {
  			e.printStackTrace();
  		}

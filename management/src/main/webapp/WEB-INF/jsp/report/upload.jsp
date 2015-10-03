@@ -21,8 +21,8 @@
 	    </div>
  </div>
   <div class="container">
-	<form:form class="form-group form" name="input" method="post" action="" modelAttribute="report">
-	File: <input type="text" name="name" /><br/>
+	<form:form class="form-group form" name="input" method="post" action="reports/go" modelAttribute="report">
+	Job name: <input type="text" name="name" /><br/>
 	Description: <input type="text" name="description" /><br/>
 	Provider:<input type="text" name="provider" /><br/>
 
