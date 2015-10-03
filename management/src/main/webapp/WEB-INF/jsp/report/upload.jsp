@@ -21,12 +21,22 @@
 	    </div>
  </div>
   <div class="container">
-	<form:form class="form-group form" name="input" method="post" action="" modelAttribute="csv">
-	File: <input type="text" name="csvFile" /><br/>
+	<form:form class="form-group form" name="input" method="post" action="" modelAttribute="report">
+	File: <input type="text" name="name" /><br/>
+	Description: <input type="text" name="description" /><br/>
+	Provider:<input type="text" name="provider" /><br/>
 
 	<input type="submit" value="Submit">
 	</form:form>
 	</div>
+	
+	<div class="nav">
+      	<div class="container">
+        	<ul class="pull-left">
+        		<li><a href="reports?view">View upload reports</a></li>
+        	</ul>
+      	</div>
+    </div>
 
 </body>
 </html>

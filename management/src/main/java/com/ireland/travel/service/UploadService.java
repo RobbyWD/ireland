@@ -6,6 +6,8 @@ import org.springframework.batch.core.JobParameters;
 import org.springframework.batch.core.launch.JobLauncher;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import com.ireland.travel.entity.domain.Report;
+
 
 @Service
 public class UploadService {
@@ -16,16 +18,19 @@ public class UploadService {
 	@Autowired
 	Job job;
 	
+	@Autowired
+	ReportService reportService;
+	
 	 public void upload() {
 		 try {
 		    	
  		JobExecution execution = jobLauncher.run(job, new JobParameters());
- 		System.out.println("Exit Status : " + execution.getStatus());
- 	
+ 		Report report = new Report(job.getName(),"Uploading Tours", execution.getStartTime().toString(),execution.getEndTime().toString(),
+ 				execution.getStatus().toString(),"Failte Ireland");
+ 		reportService.saveReport(report);	
  		} catch (Exception e) {
  			e.printStackTrace();
  		}
- 	
 			
 	 }
 

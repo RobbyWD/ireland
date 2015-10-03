@@ -9,6 +9,7 @@
     <class>com.ireland.travel.entity.domain.Product</class>
     <class>com.ireland.travel.entity.domain.Purchase</class>
     <class>com.ireland.travel.entity.domain.PurchaseItem</class>
+    <class>com.ireland.travel.entity.domain.Report</class>
     <class>com.ireland.travel.entity.domain.User</class>
     
     </persistence-unit>
