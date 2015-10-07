@@ -25,12 +25,8 @@ public class UploadService {
 	private JobExecution execution;
 	
 	 public void upload() {
-		 try {
-		    	
+		 try {	    	
  		execution = jobLauncher.run(job, new JobParameters());
-// 		Report report = new Report(job.getName(),"Uploading Tours", execution.getStartTime().toString(),execution.getEndTime().toString(),
-// 				execution.getStatus().toString(),"Failte Ireland");
-// 		reportService.saveReport(report);	
  		} catch (Exception e) {
  			e.printStackTrace();
  		}

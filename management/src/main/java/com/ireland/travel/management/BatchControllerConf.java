@@ -2,7 +2,6 @@ package com.ireland.travel.management;
 
 import javax.sql.DataSource;
 
-import org.apache.commons.dbcp.BasicDataSource;
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.JobExecutionListener;
 import org.springframework.batch.core.Step;
@@ -10,6 +9,7 @@ import org.springframework.batch.core.configuration.annotation.EnableBatchProces
 import org.springframework.batch.core.configuration.annotation.JobBuilderFactory;
 import org.springframework.batch.core.configuration.annotation.StepBuilderFactory;
 import org.springframework.batch.core.launch.support.RunIdIncrementer;
+import org.springframework.batch.item.ItemProcessor;
 import org.springframework.batch.item.ItemReader;
 import org.springframework.batch.item.ItemWriter;
 import org.springframework.batch.item.database.BeanPropertyItemSqlParameterSourceProvider;
@@ -25,6 +25,7 @@ import org.springframework.core.io.ClassPathResource;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import com.ireland.travel.entity.domain.Product;
+import com.ireland.travel.service.ImageItemProcessor;
 
 @Configuration
 @EnableBatchProcessing
@@ -37,10 +38,10 @@ public class BatchControllerConf {
     @Bean
     public ItemReader<Product> reader() {
         FlatFileItemReader<Product> reader = new FlatFileItemReader<Product>();
-        reader.setResource(new ClassPathResource("main.csv"));
+        reader.setResource(new ClassPathResource("tours.csv"));
         reader.setLineMapper(new DefaultLineMapper<Product>() {{
             setLineTokenizer(new DelimitedLineTokenizer() {{
-                setNames(new String[] { "name","description","price","duration","featured" });
+                setNames(new String[] { "name","description","imagePath","price","duration","featured" });
             }});
             setFieldSetMapper(new BeanWrapperFieldSetMapper<Product>() {{
                 setTargetType(Product.class);
@@ -48,13 +49,18 @@ public class BatchControllerConf {
         }});
         return reader;
     }
+    
+    @Bean
+    public ItemProcessor<Product, Product> processor() {
+        return new ImageItemProcessor();
+    }
  
 
     @Bean
     public ItemWriter<Product> writer(DataSource dataSource) {
         JdbcBatchItemWriter<Product> writer = new JdbcBatchItemWriter<Product>();
         writer.setItemSqlParameterSourceProvider(new BeanPropertyItemSqlParameterSourceProvider<Product>());
-        writer.setSql("INSERT INTO product (name, description, price, duration, featured) VALUES (:name, :description, :price, :duration, :featured)");
+        writer.setSql("INSERT INTO product (name, description,imagePath, price, duration, featured) VALUES (:name, :description, :imagePath, :price, :duration, :featured)");
         writer.setDataSource(dataSource);
         return writer;
     }
@@ -71,10 +77,11 @@ public class BatchControllerConf {
 
     @Bean
     public Step step1(StepBuilderFactory stepBuilderFactory, ItemReader<Product> reader,
-            ItemWriter<Product> writer) {
+            ItemWriter<Product> writer,ItemProcessor<Product, Product> processor) {
         return stepBuilderFactory.get("step1")
                 .<Product, Product> chunk(10)
                 .reader(reader)
+                .processor(processor)
                 .writer(writer)
                 .build();
     }

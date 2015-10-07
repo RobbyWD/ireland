@@ -16,8 +16,6 @@ public class ReportService {
 	@Autowired
 	private ReportRepository reportRepository;
 	
-
-	
 	public long countAllReports() {
         return reportRepository.count();
     }

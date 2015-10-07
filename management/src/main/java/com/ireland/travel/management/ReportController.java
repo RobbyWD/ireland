@@ -42,8 +42,6 @@ public class ReportController {
 		return "report/view";
 	}
 	
-	
-	
 	@RequestMapping(value = "/go", method = RequestMethod.POST)
 	public String updateUser(@ModelAttribute("report") @Valid Report report,
 			BindingResult result) {
