@@ -1,0 +1,21 @@
+#! /bin/bash
+
+MYSQL_PORT="3306"
+MYSQL_HOST="localhost"
+MYSQL_PASSWORD="awdf12"
+
+case $1 in
+mysql)
+
+  # start docker service
+  vagrant ssh -c "bash -i service docker start"
+
+  # start docker container with specific params
+  vagrant ssh -c "docker run --name=mysql -it -v /home/vagrant/mysql:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=$MYSQL_PASSWORD -p $MYSQL_PORT:3306 mysql"
+  
+  echo "Mysql server successufully started"
+
+  # create schema ireland_travel if not exist
+  vagrant ssh -c "docker exec mysql mysql -h$MYSQL_HOST -P$MYSQL_PORT -uroot -p$MYSQL_PASSWORD -e 'CREATE SCHEMA IF NOT EXISTS ireland_travel DEFAULT CHARACTER SET utf8;'"
+  ;;
+esac
